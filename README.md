@@ -1,4 +1,4 @@
-ImgEncode
+Image Mangle
 =========
 
-A drag and drop JavaScript tool for base64 encoding images.
+A JavaScript tool for base64 encoding images.
