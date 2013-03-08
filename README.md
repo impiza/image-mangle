@@ -1,4 +1,4 @@
-imgencode
+ImgEncode
 =========
 
-A drag and drop base64 image encoder.
+A drag and drop JavaScript tool for base64 encoding images.
