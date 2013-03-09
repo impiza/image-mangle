@@ -1,0 +1,39 @@
+html {
+  background-color: #333;
+  color: #fff;
+  font: 100%/1.4 "Lucida Grande", "Lucida Sans Unicode", Tahoma, sans-serif;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.75); }
+
+body {
+  font-size: 0.75em; }
+
+.wrap {
+  margin: 0 auto;
+  width: 96%;
+  max-width: 600px; }
+
+.upload-field {
+  height: 300px;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  text-align: center;
+  font-family: 'Lato', 'Lucida Grande', 'Lucida Sans Unicode', Tahoma, sans-serif;
+  font-weight: bold;
+  text-transform: uppercase; }
+  .upload-field.file-drag-active {
+    border: 5px dashed #555; }
+
+.upload-field__text {
+  padding: 120px 0; }
+
+.data-url {
+  display: block;
+  height: 200px;
+  width: 98%;
+  padding: 1%;
+  border: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  cursor: default; }

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html dir="ltr" lang="en-gb">
+	<head>
+		<meta charset="utf-8" />
+		<title>ImgCode - Base64 Image Encoding</title>
+
+		<link href="http://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet" />
+		<link href="css/styles.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<div class="app wrap">
+			<noscript>You need to enable JS for this app.</noscript>
+		</div>
+
+		<script type="text/template" id="upload-tmpl">
+			<div class="upload-field">
+				<p class="upload-field__text">Drag your files in here</p>
+			</div>
+		</script>
+
+		<script type="text/template" id="output-tmpl">
+			<p class="output">
+				<textarea class="data-url"><%= dataUrl %></textarea>
+				<ul>
+					<li><strong>Name:</strong> <%= name %></li>
+					<li><strong>Type:</strong> <%= type %></li>
+					<li><strong>Size:</strong> <%= size %></li>
+				</ul>
+				<p>Press <kbd>&#8984+C</kbd> or <a href="#" class="copy-to-clip">Copy to clipboard</a>
+			</p>
+		</script>
+
+		<script src="js/libs/jquery-2.0.0b2.js"></script>
+		<script src="js/libs/underscore-1.4.4.js"></script>
+		<script src="js/libs/backbone-0.9.10.js"></script>
+		<script src="js/main.js"></script>
+	</body>
+</html>
