@@ -84,7 +84,7 @@ var app = app || {};
 
 			this.$uploadField.removeClass('file-drag-active');
 
-			if (window.File && window.FileReader && window.FileList && window.Blob) {
+			if (window.File && window.FileReader && window.FileList) {
 				while (--i >= 0) {
 					file = files[i];
 		
