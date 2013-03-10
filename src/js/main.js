@@ -84,24 +84,26 @@ var app = app || {};
 
 			this.$uploadField.removeClass('file-drag-active');
 
-			while (--i >= 0) {
-				file = files[i];
+			if (window.File && window.FileReader && window.FileList && window.Blob) {
+				while (--i >= 0) {
+					file = files[i];
 		
-				if (file.type.match('image.*')) {
-					reader = new FileReader();
+					if (file.type.match('image.*')) {
+						reader = new FileReader();
 
-					reader.onload = (function(f) {
-						return function(e) {
-							app.imgs.add(new app.ImgModel({
-								name: f.name,
-								type: f.type,
-								size: f.size,
-								dataUrl: e.target.result
-							}));
-						};
-					}(file));
+						reader.onload = (function(f) {
+							return function(e) {
+								app.imgs.add(new app.ImgModel({
+									name: f.name,
+									type: f.type,
+									size: f.size,
+									dataUrl: e.target.result
+								}));
+							};
+						}(file));
 
-					reader.readAsDataURL(file);
+						reader.readAsDataURL(file);
+					}
 				}
 			}
 		},
