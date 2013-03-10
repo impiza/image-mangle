@@ -57,9 +57,11 @@ var app = app || {};
 		},
 
 		render: function() {
-			this.$el.append(this.uploadTmpl());
+			if ('draggable' in document.createElement('span')) {
+				this.$el.append(this.uploadTmpl());
 
-			this.$uploadField = this.$el.find('.upload-field');
+				this.$uploadField = this.$el.find('.upload-field');
+			}
 
 			return this;
 		},
