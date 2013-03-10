@@ -1,6 +1,8 @@
 var app = app || {};
 
 (function($, Backbone, _, window, document) {
+	'use strict';
+
 	app.ImgModel = Backbone.Model.extend();
 
 	app.ImgsCollection = Backbone.Collection.extend({
@@ -88,8 +90,6 @@ var app = app || {};
 				if (file.type.match('image.*')) {
 					reader = new FileReader();
 
-					window.console.log(file);
-
 					reader.onload = (function(f) {
 						return function(e) {
 							app.imgs.add(new app.ImgModel({
@@ -107,7 +107,6 @@ var app = app || {};
 		},
 
 		renderImgOutput: function(model) {
-			window.console.log('render image output');
 			var view = new app.ImgView({
 				model: model
 			});
