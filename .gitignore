@@ -43,3 +43,4 @@ Thumbs.db
 *.yaml
 dist/
 .sass-cache/
+node_modules/
