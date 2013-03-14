@@ -77,19 +77,14 @@ var app = app || {};
 		},
 
 		handleFiles: function(event) {
-			var files = event.originalEvent.dataTransfer.files,
-				i = files.length,
-				file,
-				reader;
+			var files = event.originalEvent.dataTransfer.files;
 
 			event.preventDefault();
 
 			this.$uploadField.removeClass('file-drag-active');
 
 			if (window.File && window.FileReader && window.FileList) {
-				while (--i >= 0) {
-					file = files[i];
-		
+				_.each(files, function(file) {
 					if (file.type.match('image.*')) {
 						reader = new FileReader();
 
@@ -106,7 +101,7 @@ var app = app || {};
 
 						reader.readAsDataURL(file);
 					}
-				}
+				});
 			}
 		},
 
