@@ -44,3 +44,4 @@ Thumbs.db
 dist/
 .sass-cache/
 node_modules/
+*.css
