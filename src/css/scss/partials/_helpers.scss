@@ -1,0 +1,21 @@
+/*
+  HELPERS & MODULES
+  ------------------------------------
+*/
+
+/* --- Clearfix --- */
+
+.cf {
+	@include clearfix;
+}
+
+
+/* --- Visibility --- */
+
+.hidden {
+	display: none;
+}
+
+.invisible {
+	visibility: hidden;
+}

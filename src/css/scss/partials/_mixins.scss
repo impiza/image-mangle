@@ -1,0 +1,31 @@
+/*
+  MIXINS
+  ------------------------------------
+*/
+
+/* --- General Helpers --- */
+
+@mixin clearfix {
+	*zoom: 1;
+
+	&:before,
+	&:after {
+		content: ' ';
+		display: table;
+	}
+
+	&:after {
+		clear: both;
+	}
+}
+
+
+/* --- CSS3 --- */
+
+@mixin prefix($prop, $val) {
+	$prefixes: webkit, moz, ms, o;
+
+	@each $prefix in $prefixes {
+		-#{$prefix}-#{$prop}: $val;
+	}
+}
