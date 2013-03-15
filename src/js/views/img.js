@@ -1,9 +1,11 @@
-var app = app || {};
-
-(function(Backbone, _) {
+define([
+	'jquery',
+	'underscore',
+	'backbone'
+], function ($, _, Backbone) {
 	'use strict';
 
-	app.ImgView = Backbone.View.extend({
+	var ImgView = Backbone.View.extend({
 		tagName: 'div',
 
 		className: 'output',
@@ -30,4 +32,6 @@ var app = app || {};
 			this.$textArea.select();
 		}
 	});
-}(Backbone, _));
+
+	return ImgView;
+});

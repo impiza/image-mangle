@@ -1,9 +1,12 @@
-var app = app || {};
-
-(function(Backbone) {
+define([
+	'backbone',
+	'models/img'
+], function (Backbone, ImgModel) {
 	'use strict';
 
-	app.ImgsCollection = Backbone.Collection.extend({
-		model: app.ImgModel
+	var ImgsCollection = Backbone.Collection.extend({
+		model: ImgModel
 	});
-}(Backbone));
+	
+	return ImgsCollection;
+});

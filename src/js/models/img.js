@@ -1,7 +1,9 @@
-var app = app || {};
-
-(function(Backbone) {
+define([
+	'backbone'
+], function (Backbone) {
 	'use strict';
 
-	app.ImgModel = Backbone.Model.extend();
-}(Backbone));
+	var ImgModel = Backbone.Model.extend();
+
+	return ImgModel;
+});

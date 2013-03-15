@@ -1,9 +1,32 @@
-var app = app || {};
-
-(function($) {
+(function() {
 	'use strict';
 
-	$(function() {
-		app.app = new app.AppView();
+	require.config({
+		shim: {
+			underscore: {
+				exports: '_'
+			},
+			backbone: {
+				deps: [
+					'underscore',
+					'jquery'
+				],
+				exports: 'Backbone'
+			}
+		},
+		paths: {
+			jquery: 'libs/jquery-2.0.0b2',
+			underscore: 'libs/underscore-1.4.4',
+			backbone: 'libs/backbone-0.9.10'
+		}
 	});
-}(jQuery));
+
+	require([
+		'jquery',
+		'views/app'
+	], function ($, AppView) {
+		$(function() {
+			new AppView();
+		});
+	});
+}());
