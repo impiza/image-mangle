@@ -13,6 +13,8 @@ module.exports = function(grunt) {
 					jQuery: true,
 					console: true,
 					module: true,
+					define: true,
+					require: true,
 					document: true
 				}
 			}
