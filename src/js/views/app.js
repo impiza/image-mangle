@@ -23,7 +23,9 @@ var app = app || {};
 		},
 
 		render: function() {
-			if ('draggable' in document.createElement('span')) {
+			var div = document.createElement('div');
+
+			if (('draggable' in div) || ('ondragstart' in div && 'ondrop' in div)) {
 				this.$el.append(this.uploadTmpl());
 
 				this.$uploadField = this.$el.find('.upload-field');
