@@ -1,9 +1,9 @@
 var app = app || {};
 
-(function($, Backbone, _, window, document) {
+(function($) {
 	'use strict';
 
 	$(function() {
 		app.app = new app.AppView();
 	});
-}(jQuery, Backbone, _, window, document));
+}(jQuery));
