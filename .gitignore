@@ -41,7 +41,7 @@ Thumbs.db
 ######################
 *.py
 *.yaml
+*.css
 dist/
 .sass-cache/
 node_modules/
-*.css
