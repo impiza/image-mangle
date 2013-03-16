@@ -2,6 +2,7 @@
 	'use strict';
 
 	require.config({
+		baseUrl: 'js/',
 		shim: {
 			underscore: {
 				exports: '_'
