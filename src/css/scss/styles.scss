@@ -13,6 +13,11 @@
   ------------------------------------
 */
 
+html,
+body {
+	height: 100%;
+}
+
 html {
 	background: #333 url('data:image/png;base64,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');
 	color: $base-text-color;
@@ -29,26 +34,34 @@ html {
 .wrap {
 	margin: 0 auto;
 	width: 96%;
-	max-width: 600px;
+	min-height: 100%;
+	display: table;
+}
+
+.app {
+	display: table-cell;
+	vertical-align: middle;
 }
 
 .upload-field {
-	height: 300px;
-	padding: 20px;
+	margin: 0 auto;
+	padding: 10px;
+	width: 50%;
 	background-color: rgba(0, 0, 0, 0.2);
 	border-radius: 5px;
 	text-align: center;
-	font-family: $heading-font-family;
-	font-weight: bold;
+	font: bold 16px $heading-font-family;
 	text-transform: uppercase;
 
-	&.file-drag-active {
-		border: 5px dashed #555;
+	&.file-drag-active .upload-field__text {
+		border: 4px dashed #555;
+		padding: 138px 12px;
 	}
 }
 
 .upload-field__text {
-	padding: 120px 0;
+	padding: 140px 20px;
+	margin: 0;
 }
 
 .data-url {
