@@ -16,11 +16,11 @@ define([
 			'focus .data-url': 'selectOutputValue'
 		},
 
-		render: function() {
+		render: function () {
 			this.$el.html(this.outputTmpl(this.model.attributes));
 
 			this.$textArea = this.$el.find('.data-url');
-			this.$textArea.on('mouseup', function(event) {
+			this.$textArea.on('mouseup', function (event) {
 				// Fix for Chrome
 				event.preventDefault();
 			});
@@ -28,7 +28,7 @@ define([
 			return this;
 		},
 
-		selectOutputValue: function() {
+		selectOutputValue: function () {
 			this.$textArea.select();
 		}
 	});

@@ -20,14 +20,14 @@ define([
 			'drop .upload-field': 'handleFiles'
 		},
 
-		initialize: function() {
+		initialize: function () {
 			this.render();
 
 			this.draggedImgs = new ImgsCollection();
 			this.draggedImgs.on('add', this.renderImgOutput, this);
 		},
 
-		render: function() {
+		render: function () {
 			var div = document.createElement('div');
 
 			if (('draggable' in div) || ('ondragstart' in div && 'ondrop' in div)) {
@@ -39,7 +39,7 @@ define([
 			return this;
 		},
 
-		handleDrag: function(event) {
+		handleDrag: function (event) {
 			event.preventDefault();
 
 			if (event.type === 'dragenter') {
@@ -49,7 +49,7 @@ define([
 			}
 		},
 
-		handleFiles: function(event) {
+		handleFiles: function (event) {
 			var self = this,
 				files = event.originalEvent.dataTransfer.files;
 
@@ -58,14 +58,14 @@ define([
 			this.$uploadField.removeClass('file-drag-active');
 
 			if (window.File && window.FileReader && window.FileList) {
-				_.each(files, function(file) {
+				_.each(files, function (file) {
 					var reader;
 
 					if (file.type.match('image.*')) {
 						reader = new FileReader();
 
-						reader.onload = (function(f) {
-							return function(e) {
+						reader.onload = (function (f) {
+							return function (e) {
 								self.draggedImgs.add(new ImgModel({
 									name: f.name,
 									type: f.type,
@@ -81,7 +81,7 @@ define([
 			}
 		},
 
-		renderImgOutput: function(model) {
+		renderImgOutput: function (model) {
 			var view = new ImgView({
 				model: model
 			});
