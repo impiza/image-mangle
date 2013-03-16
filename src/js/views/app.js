@@ -43,9 +43,18 @@ define([
 			event.preventDefault();
 
 			if (event.type === 'dragenter') {
-				this.$uploadField.addClass('file-drag-active');
+				var originalText = this.$uploadField.text();
+
+				this.$uploadField
+					.addClass('file-drag-active')
+					.data('original-text', originalText)
+					.find('.upload-field__text')
+					.text('Drop \'em!');
 			} else if (event.type === 'dragleave') {
-				this.$uploadField.removeClass('file-drag-active');
+				this.$uploadField
+					.removeClass('file-drag-active')
+					.find('.upload-field__text')
+					.text(this.$uploadField.data('original-text'));
 			}
 		},
 
@@ -55,7 +64,10 @@ define([
 
 			event.preventDefault();
 
-			this.$uploadField.removeClass('file-drag-active');
+			this.$uploadField
+				.removeClass('file-drag-active')
+				.find('.upload-field__text')
+				.text(this.$uploadField.data('original-text'));
 
 			if (window.File && window.FileReader && window.FileList) {
 				_.each(files, function (file) {
