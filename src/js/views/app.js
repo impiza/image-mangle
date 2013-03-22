@@ -23,6 +23,8 @@ define([
 		initialize: function () {
 			this.render();
 
+			this.$mainContent = this.$el.find('.main-content');
+
 			this.draggedImgs = new ImgsCollection();
 			this.draggedImgs.on('add', this.renderImgOutput, this);
 		},
@@ -98,7 +100,7 @@ define([
 				model: model
 			});
 
-			this.$el.append(view.render().el);
+			this.$mainContent.append(view.render().el);
 		}
 	});
 

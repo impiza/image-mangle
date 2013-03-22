@@ -7,7 +7,7 @@
 
 		<link rel="dns-prefetch" href="//fonts.googleapis.com" />
 
-		<link href="http://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet" />
+		<link href="//fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet" />
 		<link href="css/styles.css" rel="stylesheet" />
 
 		<script data-main="js/main" src="js/libs/require.js"></script>
@@ -17,25 +17,30 @@
 		<div class="wrap">
 			<noscript>You need to enable JS for this app.</noscript>
 			
-			<div class="app"></div>
+			<div class="app">
+				<div class="main-content"></div>
+			</div>
 		</div>
 
 		<script type="text/template" id="upload-tmpl">
-			<div class="upload-field">
-				<p class="upload-field__text">Drag some files in here</p>
-			</div>
+			<section class="upload-field">
+				<p class="upload-field__text gamma">Drag some files in here</p>
+			</section>
 		</script>
 
-		<script type="text/template" id="output-tmpl">
-			<p class="output">
+		<script type="text/template" id="img-output-tmpl">
+			<section class="img-output">
+				<header class="img-output__header cf">
+					<ul class="img-output__meta">
+						<li><%= size %>bytes</li>
+						<li><%= type %></li>
+					</ul>
+
+					<h2 class="img-output__name"><%= name %></h2>
+				</header>
+
 				<textarea class="data-url"><%= dataUrl %></textarea>
-				<ul>
-					<li><strong>Name:</strong> <%= name %></li>
-					<li><strong>Type:</strong> <%= type %></li>
-					<li><strong>Size:</strong> <%= size %></li>
-				</ul>
-				<p><img src="<%= dataUrl %>" width="30%" alt="" /></p>
-			</p>
+			</section>
 		</script>
 	</body>
 </html>

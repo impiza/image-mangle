@@ -10,7 +10,7 @@ define([
 
 		className: 'output',
 
-		outputTmpl: _.template($('#output-tmpl').html()),
+		outputTmpl: _.template($('#img-output-tmpl').html()),
 
 		events: {
 			'focus .data-url': 'selectOutputValue'

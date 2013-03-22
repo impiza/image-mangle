@@ -85,13 +85,14 @@ h4,
 	padding: 10px;
 	width: 50%;
 	background-color: rgba(0, 0, 0, 0.2);
-	border-radius: 5px;
+	border-radius: 6px;
+	border: 1px solid #323232;
+	box-shadow: 0 0 16px rgba(0, 0, 0, 0.8) inset;
 	text-align: center;
-	font: bold 16px $heading-font-family;
-	text-transform: uppercase;
+	@include prefix(box-sizing, border-box);
 
 	&.file-drag-active .upload-field__text {
-		border: 4px dashed #555;
+		border: 4px dashed $base-grey;
 		padding: 138px 12px;
 	}
 }
@@ -103,10 +104,41 @@ h4,
 
 .data-url {
 	display: block;
-	height: 200px;
-	width: 98%;
-	padding: 1%;
-	border: 0;
+	height: 100px;
+	width: 100%;
+	padding: 10px;
+	text-align: left;
+	line-height: inherit;
 	@include prefix(box-sizing, border-box);
 	cursor: default;
+}
+
+.img-output {
+	margin-bottom: 20px;
+}
+
+.img-output__name {
+	overflow: hidden;
+}
+
+.img-output__meta {
+	float: right;
+	margin: 5px 0;
+
+	li {
+		display: inline-block;
+		border-right: 1px solid $base-grey;
+		padding: 0 8px 0 4px;
+		color: $base-grey;
+
+		&:last-child {
+			border-right: 0;
+			padding-right: 0;
+		}
+	}
+}
+
+.main-content {
+	width: 50%;
+	margin: 0 auto;
 }
