@@ -1,1 +1,1 @@
-sass --watch src/css/scss:src/css/ --style expanded --debug-info
+sass --watch src/css/scss:src/css/ --style expanded --sourcemap
