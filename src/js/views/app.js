@@ -42,10 +42,12 @@ define([
 		},
 
 		handleDrag: function (event) {
+			var originalText;
+
 			event.preventDefault();
 
 			if (event.type === 'dragenter') {
-				var originalText = this.$uploadField.text();
+				originalText = this.$uploadField.text();
 
 				this.$uploadField
 					.addClass('file-drag-active')
@@ -53,10 +55,12 @@ define([
 					.find('.upload-field__text')
 					.text('Drop \'em!');
 			} else if (event.type === 'dragleave') {
+				originalText = this.$uploadField.data('original-text');
+
 				this.$uploadField
 					.removeClass('file-drag-active')
 					.find('.upload-field__text')
-					.text(this.$uploadField.data('original-text'));
+					.text(originalText);
 			}
 		},
 
