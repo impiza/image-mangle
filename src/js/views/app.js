@@ -87,7 +87,7 @@ define([
 								self.draggedImgs.add(new ImgModel({
 									name: f.name,
 									type: f.type,
-									size: f.size,
+									fileSize: f.size,
 									dataUrl: e.target.result
 								}));
 							};
