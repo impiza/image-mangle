@@ -4,21 +4,21 @@
 	require.config({
 		baseUrl: 'js/',
 		shim: {
-			underscore: {
+			lodash: {
 				exports: '_'
 			},
 			backbone: {
 				deps: [
-					'underscore',
+					'lodash',
 					'jquery'
 				],
 				exports: 'Backbone'
 			}
 		},
 		paths: {
-			jquery: 'libs/jquery-2.0.0b2',
-			underscore: 'libs/underscore-1.4.4',
-			backbone: 'libs/backbone-0.9.10'
+			jquery: 'libs/jquery-2.0.3.min',
+			lodash: 'libs/lodash.1.3.1.min',
+			backbone: 'libs/backbone-1.0-min'
 		}
 	});
 
