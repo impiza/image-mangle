@@ -111,7 +111,7 @@ module.exports = function (grunt) {
 
 		concurrent: {
 			run: {
-				tasks: ['watch', 'jshint', 'connect'],
+				tasks: ['watch', 'connect'],
 				options: {
 					logConcurrentOutput: true
 				}
