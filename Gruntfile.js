@@ -111,12 +111,12 @@ module.exports = function (grunt) {
 
 		concurrent: {
 			run: {
-				tasks: ['watch', 'connect'],
+				tasks: ['watch', 'jshint', 'connect'],
 				options: {
 					logConcurrentOutput: true
 				}
 			}
-		},
+		}
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-jshint');
@@ -127,6 +127,9 @@ module.exports = function (grunt) {
 	// grunt.loadNpmTasks('grunt-autoprefixer');
 
 	grunt.registerTask('build', ['jshint', 'sass:build']);
-	grunt.registerTask('run', ['concurrent']);
+	grunt.registerTask('run', [
+		'sass:dev',
+		'concurrent'
+	]);
 	// grunt.registerTask('ap', ['autoprefixer']);
 };
