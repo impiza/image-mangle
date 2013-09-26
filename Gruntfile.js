@@ -2,9 +2,9 @@ module.exports = function (grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 
-		srcDir: './src',
+		srcDir: 'src',
 		devCssDir: '<%= srcDir %>/css',
-		devScssDir: '<%= srcCssDir %>/scss',
+		devScssDir: '<%= devCssDir %>/scss',
 		devJsDir: '<%= srcDir %>/js',
 
 		jshint: {
@@ -54,7 +54,7 @@ module.exports = function (grunt) {
 		sass: {
 			dev: {
 				files: {
-					'<%= devScssDir %>/styles.scss': '<%= srcCssDir %>/styles.css'
+					'<%= devCssDir %>/styles.css': '<%= devScssDir %>/styles.scss'
 				},
 				options: {
 					style: 'expanded'
@@ -62,13 +62,36 @@ module.exports = function (grunt) {
 			},
 			build: {
 				files: {
-					'<%= srcScssDir %>/styles.scss': '<%= srcCssDir %>/styles.css'
+					'<%= devCssDir %>/styles.css': '<%= devScssDir %>/styles.scss'
 				},
 				options: {
 					style: 'compressed'
 				}
 			}
 		},
+
+		/*autoprefixer: {
+			options: {
+				browsers: ['last 2 version']
+			},
+
+			// single_file: {
+			// 	src: 'src/css/file.css',
+			// 	dest: 'dest/css/file.css'
+			// },
+
+			multiple_files: {
+				// expand: true,
+				// flatten: true,
+				src: 'src/css/*.css', // -> src/css/file1.css, src/css/file2.css
+				dest: 'src/css/*.css'
+			}
+
+			// concat: {
+			// 	src: 'src/css/*.css', // -> src/css/file1.css, src/css/file2.css
+			// 	dest: 'dest/css/concatenated.css' // -> dest/css/concatenated.css
+			// }
+		},*/
 
 		watch: {
 			css: {
@@ -101,7 +124,9 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-concurrent');
+	// grunt.loadNpmTasks('grunt-autoprefixer');
 
 	grunt.registerTask('build', ['jshint', 'sass:build']);
 	grunt.registerTask('run', ['concurrent']);
+	// grunt.registerTask('ap', ['autoprefixer']);
 };
