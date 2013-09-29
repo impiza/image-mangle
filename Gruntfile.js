@@ -6,7 +6,11 @@ module.exports = function (grunt) {
 		devCssDir: '<%= srcDir %>/css',
 		devScssDir: '<%= devCssDir %>/scss',
 		devJsDir: '<%= srcDir %>/js',
-		builtDir: '<%= srcDir %>/built',
+		distDir: 'dist',
+
+		clean: {
+			dist: ['<%= distDir %>/']
+		},
 
 		jshint: {
 			files: [
@@ -107,13 +111,14 @@ module.exports = function (grunt) {
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-jshint');
+	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-concurrent');
 	grunt.loadNpmTasks('grunt-shell');
 
-	grunt.registerTask('build', ['jshint', 'sass:build']);
+	grunt.registerTask('build', ['jshint', 'clean', 'sass:build']);
 	grunt.registerTask('run', [
 		'sass:dev',
 		'concurrent'
