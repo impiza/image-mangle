@@ -119,7 +119,11 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-concurrent');
 	grunt.loadNpmTasks('grunt-shell');
 
-	grunt.registerTask('build', ['jshint', 'clean', 'sass:build']);
+	grunt.registerTask('build', [
+		'jshint',
+		'clean',
+		'sass:build'
+	]);
 	grunt.registerTask('run', [
 		'sass:dev',
 		'concurrent'
