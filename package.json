@@ -10,14 +10,12 @@
   "version": "0.0.1",
   "devDependencies": {
     "grunt": "~0.4.1",
-    "grunt-contrib-nodeunit": "~0.1.2",
     "grunt-contrib-jshint": "~0.6.4",
     "grunt-contrib-uglify": "0.1.1rc6",
-    "grunt-contrib-concat": "~0.1.1",
-    "grunt-requirejs": "~0.3.3",
     "grunt-contrib-connect": "~0.5.0",
     "grunt-concurrent": "~0.3.1",
     "grunt-contrib-watch": "~0.5.3",
-    "grunt-autoprefixer": "~0.3.0"
+    "grunt-autoprefixer": "~0.3.0",
+    "grunt-shell": "~0.4.0"
   }
 }

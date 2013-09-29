@@ -6,6 +6,7 @@ module.exports = function (grunt) {
 		devCssDir: '<%= srcDir %>/css',
 		devScssDir: '<%= devCssDir %>/scss',
 		devJsDir: '<%= srcDir %>/js',
+		builtDir: '<%= srcDir %>/built',
 
 		jshint: {
 			files: [
@@ -70,29 +71,6 @@ module.exports = function (grunt) {
 			}
 		},
 
-		/*autoprefixer: {
-			options: {
-				browsers: ['last 2 version']
-			},
-
-			// single_file: {
-			// 	src: 'src/css/file.css',
-			// 	dest: 'dest/css/file.css'
-			// },
-
-			multiple_files: {
-				// expand: true,
-				// flatten: true,
-				src: 'src/css/*.css', // -> src/css/file1.css, src/css/file2.css
-				dest: 'src/css/*.css'
-			}
-
-			// concat: {
-			// 	src: 'src/css/*.css', // -> src/css/file1.css, src/css/file2.css
-			// 	dest: 'dest/css/concatenated.css' // -> dest/css/concatenated.css
-			// }
-		},*/
-
 		watch: {
 			css: {
 				files: [
@@ -116,6 +94,15 @@ module.exports = function (grunt) {
 					logConcurrentOutput: true
 				}
 			}
+		},
+
+		shell: {
+			deploy: {
+				command: 'appcfg.py update ./',
+				options: {
+					stdout: true
+				}
+			}
 		}
 	});
 
@@ -124,12 +111,12 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-concurrent');
-	// grunt.loadNpmTasks('grunt-autoprefixer');
+	grunt.loadNpmTasks('grunt-shell');
 
 	grunt.registerTask('build', ['jshint', 'sass:build']);
 	grunt.registerTask('run', [
 		'sass:dev',
 		'concurrent'
 	]);
-	// grunt.registerTask('ap', ['autoprefixer']);
+	grunt.registerTask('deploy', 'shell:deploy');
 };
