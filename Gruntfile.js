@@ -104,7 +104,8 @@ module.exports = function (grunt) {
 			deploy: {
 				command: 'appcfg.py update ./',
 				options: {
-					stdout: true
+					stdout: true,
+					stderr: true
 				}
 			}
 		}
